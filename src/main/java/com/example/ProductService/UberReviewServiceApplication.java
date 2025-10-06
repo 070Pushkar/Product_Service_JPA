@@ -2,12 +2,14 @@ package com.example.ProductService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-public class ProductServiceApplication {
+@EnableJpaAuditing
+public class UberReviewServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductServiceApplication.class, args);
+		SpringApplication.run(UberReviewServiceApplication.class, args);
 	}
 
 }
