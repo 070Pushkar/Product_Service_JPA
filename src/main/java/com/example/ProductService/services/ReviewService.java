@@ -25,7 +25,7 @@ public class ReviewService implements CommandLineRunner  {
     public void run(String... args) throws Exception {
      System.out.println("***********");
 
-         Review r = Review.builder().
+       /*  Review r = Review.builder().
                 content("Amazing ride quality").
                 rating(5.0).build();
         // plain java object:
@@ -34,13 +34,13 @@ public class ReviewService implements CommandLineRunner  {
                 .builder()
                 .review(r)
                 .endTime(new Date())
-                .build() ;
+                .build() ; */
 
 
-        System.out.println(r);
+      //  System.out.println(r);
        // reviewRepository.save(r);
-        // this code excecute sql quries:
-        bookingRepository.save(b);
+        // this code execute sql queries:
+       // bookingRepository.save(b);
 
         List<Review> reviews = reviewRepository.findAll();
 

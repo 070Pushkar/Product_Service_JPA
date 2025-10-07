@@ -17,7 +17,7 @@ public class Booking  extends BaseModel{
 
 
     @OneToOne(cascade = {CascadeType.PERSIST})
-    private Review review ; // we have define one to one relationship between booking and review;
+    private Review review ; // we have defined one-to-one relationship between booking and review;
 
 
     @Enumerated(value = EnumType.STRING)
@@ -32,4 +32,10 @@ public class Booking  extends BaseModel{
 
 
     private Long totalDistance;
+
+    @ManyToOne
+    private Driver driver ;
+
+    @ManyToOne
+    private Passenger passenger;
 }
