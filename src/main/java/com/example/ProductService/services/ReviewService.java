@@ -20,7 +20,7 @@ public class ReviewService implements CommandLineRunner  {
     public void run(String... args) throws Exception {
      System.out.println("***********");
 
-         /*Review r = Review.builder().
+         Review r = Review.builder().
                 content("Amazing ride quality").
                // createdAt(new Date()).
                // updatedAt(new Date())
@@ -34,8 +34,8 @@ public class ReviewService implements CommandLineRunner  {
 
         for(Review review : reviews){
             System.out.println(review.getContent());
-        } */
-       reviewRepository.deleteById(3L);
+        }
+       //reviewRepository.deleteById(3L);
 
    }
 }
