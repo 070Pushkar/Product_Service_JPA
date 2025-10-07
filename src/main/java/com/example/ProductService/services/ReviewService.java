@@ -1,6 +1,8 @@
 package com.example.ProductService.services;
 
+import com.example.ProductService.models.Booking;
 import com.example.ProductService.models.Review;
+import com.example.ProductService.repositories.BookingRepository;
 import com.example.ProductService.repositories.ReviewRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
@@ -13,8 +15,11 @@ public class ReviewService implements CommandLineRunner  {
 
    private ReviewRepository reviewRepository ;
 
-   public ReviewService(ReviewRepository reviewRepository){
+   private BookingRepository bookingRepository ;
+
+   public ReviewService(ReviewRepository reviewRepository, BookingRepository bookingRepository ){
        this.reviewRepository =reviewRepository ;
+       this.bookingRepository =bookingRepository ;
    }
     @Override
     public void run(String... args) throws Exception {
@@ -22,13 +27,20 @@ public class ReviewService implements CommandLineRunner  {
 
          Review r = Review.builder().
                 content("Amazing ride quality").
-               // createdAt(new Date()).
-               // updatedAt(new Date())
                 rating(5.0).build();
         // plain java object:
 
+        Booking b = Booking
+                .builder()
+                .review(r)
+                .endTime(new Date())
+                .build() ;
+
+
         System.out.println(r);
-        reviewRepository.save(r);// this code excecute sql quries:
+       // reviewRepository.save(r);
+        // this code excecute sql quries:
+        bookingRepository.save(b);
 
         List<Review> reviews = reviewRepository.findAll();
 

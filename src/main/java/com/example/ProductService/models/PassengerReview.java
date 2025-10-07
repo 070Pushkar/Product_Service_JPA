@@ -11,4 +11,7 @@ import lombok.Setter;
 public class PassengerReview extends Review{
 
     private String passengerReviewContent;
+
+    private String passengerRating;
+
 }

@@ -15,7 +15,7 @@ import java.util.Date;
 public abstract class BaseModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE) // identity means auto increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // identity means auto increment
     protected  Long id;
 
     @Column(nullable = false)
